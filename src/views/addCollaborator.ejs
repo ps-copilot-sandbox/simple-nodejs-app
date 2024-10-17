@@ -1,0 +1,42 @@
+<!-- Include the header.ejs file -->
+<%- include('header', { title: 'Add Collaborator' }) %>
+
+<div class="row">
+    <div class="col-md-12">
+        <form id="add-collaborator-form" class="needs-validation" method="POST">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="owner">Owner</label>
+                    <input type="text" class="form-control" id="owner" name="owner" value="peace-lily-co" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="repo">Repo</label>
+                    <input type="text" class="form-control" id="repo" name="repo" value="jquery" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" value="vfmtesting_fabrikam" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="permissions">Permissions</label>
+                    <select class="form-control" id="permissions" name="permissions" value="Read" required>
+                        <option value="read">Read</option>
+                        <option value="triage">Triage</option>
+                        <option value="write">Write</option>
+                        <option value="maintain">Maintain</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Add Collaborator</button>
+        </form>
+    </div>
+</div>
+
+<!-- Include the popup message -->
+<%- include('popup') %>
+
+<!-- Include the footer.ejs file -->
+<%- include('footer') %>

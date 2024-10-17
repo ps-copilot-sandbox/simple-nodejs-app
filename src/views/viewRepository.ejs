@@ -1,0 +1,31 @@
+<!-- Include the header.ejs file -->
+<%- include('header', { title: 'View Repositories' }) %>
+
+<!-- Form to ask for organization -->
+<div class="row">
+    <div class="col-md-12">
+        <form action="/viewRepository" method="GET">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="organization">Enter Organization Name:</label>
+                    <input type="text" id="organization" name="organization" required>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        </form>
+        <!-- Show list of repositories if organization is provided -->
+        <ul>
+            <% if (repos.length > 0) { %>
+                <% repos.forEach(repo => { %>
+                    <li><%= repo.name %></li>
+                <% }) %>
+            <% } else { %>
+                <li>No repositories found.</li>            
+            <% } %>        
+        </ul>
+    </div>
+</div>
+                
+
+<!-- Include the footer.ejs file -->
+<%- include('footer') %>
