@@ -1,21 +1,27 @@
-# [EXERCISE NAME]
-<!-- REPLACE THE TITLE WITH THE NAME OF THE EXERCISE -->
+# GitHub Copilot Chat in GitHub.com
 
-This repository includes a Copilot training exercise intended to give you practical experience using the tool.
+This repository includes a Copilot training exercise intended to give you practical experience using the tool. We will go over the features of GitHub Copilot Chat in GitHub.com, including PRs, issues, summaries, and more.
 
 ## 🎯 Goal
-<!-- ONE SENTENCE ABOUT THE GOAL OF THE EXERCISE -->
+
+Go over the exercises: 
+- [ ] Generate a Code Snippet
+- [ ] Summarize a Pull Request
+- [ ] Questions about an Issue/Discussion
+- [ ] Repository Information
+- [ ] Copilot with GHAS
+- [ ] Enhance Readme with Copilot Extensions
+
 
 ## ✍️ Programming Languages
-<!-- BULLETED LIST OF LANGUAGES INVOLVES -->
-- 
+
+- JavaScript
 
 ## 💻 IDE
-<!-- OPTIONALLY SPECIFY THE IDEs THAT SHOULD BE USED -->
-- 
 
-## 🗒️ Guide
-<!-- STEP BY STEP INSTRUCTIONS DETAILING HOW TO COMPLETE THE EXERCISE -->
+- Visual Studio Code
+- Visual Studio
+- GitHub.com
 
 ## 🤝 Contributing
 Contributions are warmly welcomed! ✨
