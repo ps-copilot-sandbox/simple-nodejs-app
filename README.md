@@ -4,14 +4,13 @@ This repository includes a Copilot training exercise intended to give you practi
 
 ## 🎯 Goal
 
-Go over the exercises: 
+Go over the exercises:
 - [ ] Generate a Code Snippet
 - [ ] Summarize a Pull Request
 - [ ] Questions about an Issue/Discussion
 - [ ] Repository Information
 - [ ] Copilot with GHAS
 - [ ] Enhance Readme with Copilot Extensions
-
 
 ## ✍️ Programming Languages
 
