@@ -9,8 +9,8 @@ $(document).ready(function() {
 			data: $(this).serialize(),
 			success: function(response) {
 				if (response.message) {
-					$('#popup-message .modal-title').text(response.messageType);
-					$('#popup-message .modal-body p').text(response.message);
+					$('#popup-message .modal-title').html(response.messageType);
+					$('#popup-message .modal-body p').html(response.message);
 					$('#popup-message').show();
 				}
 			},
