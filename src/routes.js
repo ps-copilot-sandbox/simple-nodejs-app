@@ -30,10 +30,6 @@ router.post('/addCollaborator', async (req, res) => {
     }
 });
 
-// router.get('/viewRepository', (req, res) => {
-//     res.render('viewRepository');
-// });
-
 router.get('/viewRepository', async (req, res) => {
     try {
         const repos = await viewRepository(req.query.organization);
