@@ -1,0 +1,56 @@
+<!-- Include the header.ejs file -->
+<%- include('header', { title: 'View Repositories' }) %>
+
+<!-- Form to ask for organization, team name, team description, permission, notification setting, privacy -->
+
+<div class="row">
+    <div class="col-md-12">
+        <% if (message) { %>
+            <div class="alert alert-<%= messageType === 'Success' ? 'success' : 'danger' %>">
+                <%= message %>
+            </div>
+        <% } %>
+        <form action="/createOrgTeam" method="POST">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="org">Enter Organization Name:</label>
+                    <input type="text" id="org" name="org" value="peace-lily-co" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="name">Enter Team Name:</label>
+                    <input type="text" id="name" name="name" value="testers" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="description">Enter Team Description:</label>
+                    <input type="text" id="description" name="description" value="this is a description" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="permission">Enter Team Permission:</label>
+                    <input type="text" id="permission" name="permission" value="push" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="teamNotificationSetting">Enter Team Notification Setting:</label>
+                    <input type="text" id="teamNotificationSetting" name="teamNotificationSetting" value="notifications_enabled" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="privacy">Enter Team Privacy:</label>
+                    <input type="text" id="privacy" name="privacy" value="closed" required>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        </form>
+    </div>
+
+
+<!-- Include the footer.ejs file -->
+<%- include('footer') %>

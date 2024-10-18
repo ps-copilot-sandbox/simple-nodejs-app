@@ -2,6 +2,7 @@
 import express from 'express';
 import { addCollaborator } from './services/collaboratorService.js';
 import { viewRepository } from './services/viewRepository.js';
+import { createOrgTeam } from './services/createOrgTeam.js';
 
 const router = express.Router();
 
@@ -30,9 +31,32 @@ router.post('/addCollaborator', async (req, res) => {
     }
 });
 
-// router.get('/viewRepository', (req, res) => {
-//     res.render('viewRepository');
-// });
+router.post('/createOrgTeam', async (req, res) => {
+    const { org, name, description, permission, teamNotificationSetting, privacy } = req.body;
+
+    if (!org) {
+        return res.render('createOrgTeam', { messageType: 'Failure', message: 'Organization ID is required' });
+    }
+
+    console.log(`Received org: ${org}, name: ${name}, description: ${description}, permission: ${permission}, teamNotificationSetting: ${teamNotificationSetting}, privacy: ${privacy}`);
+
+    try {
+        const response = await createOrgTeam(org, name, description, permission, teamNotificationSetting, privacy);
+        if (response === 201 || response === 204) {
+            res.render('createOrgTeam', { messageType: 'Success', message: 'Team created successfully' });
+        } else {
+            res.render('createOrgTeam', { messageType: 'Failure', message: 'There has been an error creating the team' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.render('createOrgTeam', { messageType: 'Failure', message: `An error occurred while creating the team: ${error.message}` });
+    }
+});
+
+// Ensure the GET route also passes the variables
+router.get('/createOrgTeam', (req, res) => {
+    res.render('createOrgTeam', { messageType: null, message: null });
+});
 
 router.get('/viewRepository', async (req, res) => {
     try {
